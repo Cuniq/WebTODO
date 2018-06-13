@@ -12,38 +12,46 @@
 </head>
 
 <body>
-    <div class="todo-node">
-        <div class="todo-title d-flex-center-between">
+    <div class="todo-node" draggable="true">
+        <div class="todo-title d-flex-center-between" draggable="true">
             <span>Todo title</span>
-            <button data-toggle="collapse" data-target="#inputListItem">+</button>
+            <button>+</button>
         </div>
         <ul>
-            <li id="inputListItem">
+            <li>
                 <input type="text" placeholder="Add new Todo">
             </li>
             <li>
-                <span></span>
-                First task
+                <span>First task</span>
+
             </li>
             <li>
-                <span></span>
-                First task23
+                <span>First task23</span>
+
             </li>
             <li>
-                <span></span>
-                First task234
+                <span>First task234</span>
+
             </li>
             <li>
-                <span></span>
-                First task235
+                <span>First task235</span>
+
             </li>
             <li>
-                <span>
-                </span>
-                First task236
+                <span>First task236</span>
+
             </li>
         </ul>
     </div>
+
+    <script src="./scripts/todo.js"></script>
+    <script src="./scripts/drag.js"></script>
+    <script>
+        resetInput();
+        dragElement();
+        alignTodoNodes();
+        addNewTodoItemButtonEvent();
+    </script>
 </body>
 
 </html>

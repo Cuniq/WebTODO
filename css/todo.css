@@ -20,11 +20,21 @@ body {
     line-height: 1.5;
     color: #212529;
     text-align: left;
-    background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+    background: linear-gradient(141deg, #07b4a9 0%, #1fc8db 51%, #62ccf3 75%);
 }
 
-html, body{
+html, body {
     height: 100%;
+}
+
+input[type=text] {
+    transition:  all 0.30s ease-in-out;
+    outline: none;
+}
+
+input[type=text]:focus {
+    box-shadow: 0 0 5px 2px #0e65b6;
+    padding: 3px 0;
 }
 
 .d-flex-center-between {
@@ -36,9 +46,9 @@ html, body{
 
 .todo-node {
     z-index: 10;
-    position: fixed;
+    position: absolute;
     width: 300px;
-    border: 1px solid black;
+    box-shadow: 0 0 25px rgb(0, 0, 0, 0.3);
 }
 
 .todo-node > .todo-title {
@@ -48,6 +58,7 @@ html, body{
     background-color: #1f72af;
     padding: 0.6rem 1rem;
     text-transform: uppercase;
+    cursor: move;
 }
 
 .todo-node > .todo-title > button {
@@ -58,24 +69,10 @@ html, body{
     font-size: inherit;
 }
 
-input[type=text] {
-      transition:  all 0.30s ease-in-out;
-      outline: none;
-}
-
-input[type=text]:focus {
-      box-shadow: 0 0 5px 2px #0e65b6;
-      padding: 3px 0px 3px 3px;
-}
-
 .todo-node > ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-}
-
-.todo-node > ul > li {
-    line-height: 2.5;
 }
 
 .todo-node > ul > li > input {
@@ -84,7 +81,11 @@ input[type=text]:focus {
     font-size: 1.1rem;
     padding: 1rem 1.3rem;
     border: none;
-    position: hidden;
+}
+
+.todo-node > ul > li {
+    line-height: 2.4;
+    color: #555555;
 }
 
 .todo-node > ul > li:nth-child(2n) {
@@ -95,24 +96,25 @@ input[type=text]:focus {
     background-color: white;
 }
 
-.todo-node > ul > li > span {
+.todo-node > ul > li > span::before {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f056';
+    font-weight: 900;
     background-color: #f50a0a;
     color: white;
     display: inline-block;
     width: 0%;
     opacity: 0;
     text-align: center;
-    margin-right: 3%;
+    margin-right: 6%;
     transition: width 200ms linear, opacity 210ms linear;
 }
 
-.todo-node > ul > li:hover > span {
-    width: 12%;
+.todo-node > ul > li:hover > span::before {
+    width: 14%;
     opacity: 1;
 }
 
-.todo-node > ul > li > span::before {
-    font-family: 'Font Awesome 5 Free';
-    content: '\f056';
-    font-weight: 900;
+.hidden {
+    display: none;
 }
